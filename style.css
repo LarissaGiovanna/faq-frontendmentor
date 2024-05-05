@@ -9,22 +9,30 @@
 body {
     font-family: Work Sans;
     background-color: hsl(275, 100%, 97%);
-    position: relative
+    position: relative;
 }
 
 main {
     background-color: white;
-    border-radius: 7px;
-    padding: 1.6rem 1.4rem 1.6rem 1.4rem;
-    width: 87%;
+    border-radius: 1rem;
+    padding: 2.7rem 2.6rem;
+    width: 44%;
     position: absolute;
-    top: 8.9rem;
-    left: 1.5rem;
+    top: 10.5rem;
+    left: 30%;
     display: flex;
     flex-direction: column;
 }
 
-main section:not(.faq){
+.img-desktop {
+    width: 100%;
+}
+
+.img-moblie {
+    display: none;
+}
+
+main section:not(.faq) {
     border-bottom: 2px solid hsl(275, 100%, 97%);
 }
 
@@ -34,48 +42,82 @@ main section *:not(p) {
 
 .faq {
     display: flex;
+    justify-content: space-between;
+    width: fit-content;
     align-items: center;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3.5rem;
     color: hsl(292, 42%, 14%);
 }
 
 .faq img {
-    width: 9%;
-    margin-right: 9%;
+    width: 60%;
+    margin-right: 10%;
 }
 
 .questions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7% 0 7% 0;
+    padding: 6% 0 6% 0;
+    cursor: pointer;
+}
+
+.questions p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: hsl(292, 42%, 14%);
 }
 
 .questions img {
     margin-left: 10%;
 }
 
-.questions p {
-    font-weight: 600;
-    color: hsl(292, 42%, 14%);
+.questions p:hover {
+    color: hsl(293, 61%, 52%);
 }
 
 main section p:not(.questions p) {
     display: none;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 21px;
     text-align: left;
     padding: 3% 1% 5% 0;
     color: hsl(292, 16%, 49%);
+
 }
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
+@media screen and (max-width:375px) {
+    main {
+        border-radius: 0.5rem;
+        padding: 1.6rem 1.4rem 1.6rem 1.4rem;
+        width: 87%;
+        top: 8.9rem;
+        left: 1.5rem;
+    }
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+    .img-desktop {
+        display: none;
+    }
+
+    .img-moblie {
+        display: block;
+    }
+
+    .faq {
+        font-size: 2rem;
+    }
+
+    .faq img {
+        width: 20%;
+    }
+
+    .questions {
+        padding: 7% 0 7% 0;
+    }
+
+    main section p:not(.questions p) {
+        font-size: 14px;
+    }
 }
